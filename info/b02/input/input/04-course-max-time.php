@@ -12,3 +12,8 @@ $zend = array(
 // Output: Tên khóa học - thời lượng
 //                  php - 127
 
+ foreach ($zend as $key => $value) {
+     echo '<pre>';
+     print_r($value['name']);
+     echo '</pre>';
+ }

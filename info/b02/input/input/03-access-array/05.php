@@ -33,3 +33,14 @@
 
     // Yêu cầu: In ra tên của các menu cấp 2, 
     // Output: Service - Company
+
+    $result = '';
+foreach ($arrMenu as $keyMenu1 => $menu1) {
+
+    if (isset($menu1['child'])) {
+        # code...
+    }
+}
+
+
+

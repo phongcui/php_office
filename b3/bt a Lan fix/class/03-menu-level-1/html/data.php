@@ -1,11 +1,11 @@
-<?php
+<?php 
     $arrMenu = [
         'index' => [
-            "name"  => "Home",   "link"  => "index.php"
+            "name"  => "Trang chủ",   "link"  => "home.php"
         ],
         'about' => [
-            "name"  => "About",  
-            "link"  => "data/about.php", 
+            "name"  => "Giới thiệu",  
+            "link"  => "about.php", 
             "child" => [
                 'service'   => [ 
                     "name"  => "Service", 
@@ -22,9 +22,10 @@
                         'toyota' => ["name" => "Toyota","link"   => "toyota.php"]
                     ]]
         ]],
-        'contact' => ["name" => "Contact", "link" => "contact.php"]
+        'contact' => ["name" => "Liên hệ", "link" => "contact.php"]
     ];
 
-    // Yêu cầu: Sửa link cho menu Toyata thành xe-toyota.com
 
+   
     
+?>

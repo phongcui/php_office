@@ -10,4 +10,16 @@ function checkEmpty($value){
 	return $flag;
 }
 
+function checkLength($value, $min, $max){
+	$flag = false;
+	$length = strlen($value);
+	if ($length < $min || $length > $max) {
+		# code...
+		$flag = true;
+	}
+	return $flag;
+}
+
+
+
 ?>

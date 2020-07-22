@@ -30,10 +30,21 @@ if(isset($_POST['title']) && isset($_POST['description'])){
 //Error title
 
 $errorTitle = '';
+$errorDescription = '';
 
 if(checkEmpty($title)){
 	$errorTitle = '<p class="error"> Du lieu khong duoc de trong ne</p>';
 }  
+
+if(checkLength($title,5,100)){
+	$errorTitle .= '<p class="error"> Thap nhat la 5 ku tu va dai nhat la 100 ky tu</p>';
+}
+
+if(checkLength($description,5,100)){
+	$errorDescription .= '<p class="error"> Thap nhat la 5 ku tu va dai nhat la 100 ky tu</p>';
+}
+
+
 
 
 ?>
@@ -63,13 +74,14 @@ if(checkEmpty($title)){
 				
 				<div class="row">
 					<p>Description</p>
-					<textarea name="description" rows="5" cols="100"></textarea>
+					<textarea name="description" rows="5" cols="100" value="<?php echo $description ?>"></textarea>
 				
 				</div>
 				
 				<div class="row">
-					<input type="submit" value="Save" name="submit">
+					<input type="submit"  name="submit">
 					<input type="button" value="Cancel" name="cancel" id="cancel-button">
+					<?php echo $errorDescription ?>
 				</div>
 				
 
