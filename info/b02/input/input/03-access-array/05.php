@@ -38,9 +38,16 @@
 foreach ($arrMenu as $keyMenu1 => $menu1) {
 
     if (isset($menu1['child'])) {
-        # code...
+        foreach ($menu1['child'] as $keyMenu2 => $menu2) {
+            $result .= $menu2['name'] ;
+        }
+
     }
 }
+echo '<pre>';
+print_r($result);
+echo '</pre>';
+
 
 
 
