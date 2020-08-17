@@ -1,0 +1,61 @@
+<root>
+    <title>Cong ty TNHH MTV Vang bac da quy Sai gon : Bang Ty gia vang SJC</title>
+    <url>http://www.sjc.com.vn/</url>
+    <ratelist updated="05:05:37 PM 14/08/2020" unit="ngàn đồng/lượng">
+        <city name="Hồ Chí Minh">
+            <item buy="54.430" sell="56.170" type="Vàng SJC 1L - 10L"/>
+            <item buy="52.300" sell="53.900" type="Vàng nhẫn SJC 99,99 1 chỉ, 2 chỉ, 5 chỉ"/>
+            <item buy="52.300" sell="54.000" type="Vàng nhẫn SJC 99,99 0,5 chỉ"/>
+            <item buy="51.800" sell="53.400" type="Vàng nữ trang 99,99%"/>
+            <item buy="50.571" sell="52.871" type="Vàng nữ trang 99%"/>
+            <item buy="37.404" sell="40.204" type="Vàng nữ trang 75%"/>
+            <item buy="28.485" sell="31.285" type="Vàng nữ trang 58,3%"/>
+            <item buy="19.620" sell="22.420" type="Vàng nữ trang 41,7%"/>
+        </city>
+        <city name="Hà Nội">
+            <item buy="54.430" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Đà Nẵng">
+            <item buy="54.430" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Nha Trang">
+            <item buy="54.420" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Cà Mau">
+            <item buy="54.430" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Huế">
+            <item buy="54.400" sell="56.200" type="Vàng SJC"/>
+        </city>
+        <city name="Bình Phước">
+            <item buy="54.410" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Miền Tây">
+            <item buy="54.430" sell="56.170" type="Vàng SJC"/>
+        </city>
+        <city name="Biên Hòa">
+            <item buy="54.430" sell="56.170" type="Vàng SJC"/>
+        </city>
+        <city name="Quãng Ngãi">
+            <item buy="54.430" sell="56.170" type="Vàng SJC"/>
+        </city>
+        <city name="Long Xuyên">
+            <item buy="54.450" sell="56.220" type="Vàng SJC"/>
+        </city>
+        <city name="Bạc Liêu">
+            <item buy="54.430" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Quy Nhơn">
+            <item buy="54.410" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Phan Rang">
+            <item buy="54.410" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Hạ Long">
+            <item buy="54.410" sell="56.190" type="Vàng SJC"/>
+        </city>
+        <city name="Quảng Nam">
+            <item buy="54.410" sell="56.190" type="Vàng SJC"/>
+        </city>
+    </ratelist>
+</root>
