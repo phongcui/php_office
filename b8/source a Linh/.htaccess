@@ -1,0 +1,6 @@
+DirectoryIndex index
+
+<filesmatch "users.ini">
+    Order Allow,Deny
+    Deny from all
+</filesmatch>
