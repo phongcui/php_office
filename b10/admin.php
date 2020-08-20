@@ -7,13 +7,13 @@
 
 <body class="stretched">
 
-<?php
+    <?php
     session_start();
     $linkRss = '';
     $message = '';
     $disable = '';
     $none = '';
-    
+
 
     if ($_SESSION['flagPermission'] == true) {
         $data = simplexml_load_file('data/timeout.xml');
@@ -24,41 +24,38 @@
             exit();
         }
 
-        if(isset($_SESSION['role'])){
-            if($_SESSION['role'] == 'admin'){
+        if (isset($_SESSION['role'])) {
+            if ($_SESSION['role'] == 'admin') {
                 // echo $_SESSION['role'];
                 $disable = '';
-                $none = 'display:none';
-            }
-            else{
+            } else {
                 $disable = 'readonly';
                 $none = 'display:none';
             }
+
+
+            
         }
 
         $contentTXT = file_get_contents('./data/rss.txt');
-        if(isset($_POST['link-rss'])){
+        if (isset($_POST['link-rss'])) {
             $linkRss = $_POST['link-rss'];
-            if(empty($linkRss)){
+            if (empty($linkRss)) {
                 $message = 'vui long nhap du lieu';
-            }
-            else{
-                file_put_contents('./data/rss.txt',$linkRss );
+            } else {
+                file_put_contents('./data/rss.txt', $linkRss);
                 $contentTXT = file_get_contents('./data/rss.txt');
                 $message = 'cap nhat thanh cong';
             }
-           
         }
-
-        }
-    else{
+    } else {
         session_unset();
         header('location: login.php');
     }
 
 
 
-?>
+    ?>
 
     <!-- Document Wrapper
 	============================================= -->
@@ -78,11 +75,11 @@
                     <form action="#" method="post">
                         <div class="form-group">
                             <h4 class="mb-2">Link RSS</h4>
-                            <textarea <?php echo $disable ?> class="required sm-form-control valid" id="link-rss" name="link-rss" rows="8" cols="30" value="" ><?php echo $contentTXT ?></textarea>
+                            <textarea <?php echo $disable ?> class="required sm-form-control valid" id="link-rss" name="link-rss" rows="8" cols="30" value=""><?php echo $contentTXT ?></textarea>
                             <?php echo $message ?>
                         </div>
                         <div class="form-group">
-                            <button class="button button-3d m-0" type="submit">Lưu</button>
+                            <button class="button button-3d m-0" type="submit" style="<?php echo $none ?>">Lưu</button>
                         </div>
                     </form>
                 </div>

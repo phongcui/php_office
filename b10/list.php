@@ -12,6 +12,10 @@ foreach ($items as $item) {
     $tmp1 = [];
     $tmp2 = [];
 
+    // echo '<pre>';
+    // print_r($item);
+    // echo '</pre>';
+
     preg_match('/src="([^"]*)"/i', $item['description'], $tmp1);
     $pattern = '.*br>(.*)';
     preg_match('/' . $pattern . '/', $item['description'], $tmp2);
@@ -62,6 +66,100 @@ foreach ($result as $item) {
     </div>
     ';
 }
+
+$lines = file("./data/rss.txt");
+
+         
+// echo '<pre>';
+// print_r($lines);
+// echo '</pre>';
+
+$link2 = $lines[0];
+
+foreach ($lines as $key ) {
+
+
+}
+
+$xml2 = simplexml_load_file($link2, 'SimpleXMLElement', LIBXML_NOCDATA);
+$xmlJson2    = json_encode($xml2);
+$xmlArr2     = json_decode($xmlJson2, 1);
+$list2       = $xmlArr2['channel']['item'];
+
+echo '<pre>';
+print_r($list2);
+echo '</pre>';
+
+
+foreach ($list2 as $item2 => $key2) {
+
+    // echo '<pre>';
+    // print_r($key2);
+    // echo '</pre>';
+
+    $tmp1 = [];
+    $tmp2 = [];
+
+    // echo '<pre>';
+    // print_r($item);
+    // echo '</pre>';
+
+    // preg_match('/src="([^"]*)"/i', $item['description'], $tmp1);
+    // $pattern = '.*br>(.*)';
+    // preg_match('/' . $pattern . '/', $item['description'], $tmp2);
+
+    // $image = (isset($tmp1[1])) ? $tmp1[1] : '';
+    // $description = (isset($tmp2[1])) ? $tmp2[1] : $item['description'];
+
+    $result2[] = [
+        'title' => $key2['title'],
+        'description' => $description2,
+        'pubDate' => date('d/m/Y H:i:s', strtotime($item2['pubDate'])),
+        'link' => $key2['link'],
+        // 'image' => $image
+    ];
+}
+
+$xhtml2 .= 'Vietnamnet ne';
+
+foreach ($result2 as $item ) {
+    $title = $item['title'];
+    $image = $item['image'];
+    $date = $item['pubDate'];
+    $description = $item['description'];
+    $link = $item['link'];
+    $image = '';
+    $xhtml2 .= '
+    <div class="col-md-6 p-3">
+        <div class="entry mb-1 clearfix">
+            <div class="entry-image mb-3">
+                <a href="' . $image . '" data-lightbox="image" style="background: url(' . $image . ') no-repeat center center; background-size: cover; height: 278px;"></a>
+            </div>
+            <div class="entry-title">
+                <h3><a href="' . $link . '">' . $title . '</a></h3>
+            </div>
+            <div class="entry-content">
+                ' . $description . '
+            </div>
+            <div class="entry-meta no-separator nohover">
+                <ul class="justify-content-between mx-0">
+                    <li><i class="icon-calendar2"></i> ' . $date . '</li>
+                    <li>Vietnamnet</li>
+                </ul>
+            </div>
+            <div class="entry-meta no-separator hover">
+                <ul class="mx-0">
+                    <li><a href="' . $link . '">Xem &rarr;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    ';
+}
+
+
+
+
 ?>
 
 <section id="content" class="bg-light">
@@ -73,6 +171,8 @@ foreach ($result as $item) {
             <!-- Posts -->
             <div class="row grid-container infinity-wrapper clearfix">
                 <?= $xhtml ?>
+
+                <?= $xhtml2 ?>
             </div>
 
             <!-- Infinity Scroll Loader
