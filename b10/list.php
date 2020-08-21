@@ -70,25 +70,22 @@ foreach ($result as $item) {
 $lines = file("./data/rss.txt");
 
          
-// echo '<pre>';
-// print_r($lines);
-// echo '</pre>';
+echo '<pre>';
+print_r($lines);
+echo '</pre>';
 
 $link2 = $lines[0];
+$link3 = $lines[1];
 
-foreach ($lines as $key ) {
+$link3 = rtrim($link3);
 
-
-}
 
 $xml2 = simplexml_load_file($link2, 'SimpleXMLElement', LIBXML_NOCDATA);
 $xmlJson2    = json_encode($xml2);
 $xmlArr2     = json_decode($xmlJson2, 1);
 $list2       = $xmlArr2['channel']['item'];
 
-echo '<pre>';
-print_r($list2);
-echo '</pre>';
+
 
 
 foreach ($list2 as $item2 => $key2) {
@@ -113,18 +110,18 @@ foreach ($list2 as $item2 => $key2) {
 
     $result2[] = [
         'title' => $key2['title'],
-        'description' => $description2,
+        'description' => $key2['description'],
         'pubDate' => date('d/m/Y H:i:s', strtotime($item2['pubDate'])),
         'link' => $key2['link'],
         // 'image' => $image
     ];
 }
-
+$xhtml2 = '';
 $xhtml2 .= 'Vietnamnet ne';
 
 foreach ($result2 as $item ) {
     $title = $item['title'];
-    $image = $item['image'];
+    // $image = $item['image'];
     $date = $item['pubDate'];
     $description = $item['description'];
     $link = $item['link'];
@@ -157,7 +154,76 @@ foreach ($result2 as $item ) {
     ';
 }
 
+$xml3 = simplexml_load_file($link3, 'SimpleXMLElement', LIBXML_NOCDATA);
+$xmlJson3    = json_encode($xml3);
+$xmlArr3     = json_decode($xmlJson3, 1);
+$list3       = $xmlArr3['channel']['item'];
 
+echo '<pre>';
+print_r($list3);
+echo '</pre>';
+
+foreach ($list3 as $item) {
+    $tmp1 = [];
+    $tmp2 = [];
+
+    // echo '<pre>';
+    // print_r($item);
+    // echo '</pre>';
+
+    preg_match('/src="([^"]*)"/i', $item['description'], $tmp1);
+    $pattern = '.*br>(.*)';
+    preg_match('/' . $pattern . '/', $item['description'], $tmp2);
+
+    $image = (isset($tmp1[1])) ? $tmp1[1] : '';
+    $description = (isset($tmp2[1])) ? $tmp2[1] : $item['description'];
+
+    $result3[] = [
+        'title' => $item['title'],
+        'description' => $description,
+        'pubDate' => date('d/m/Y H:i:s', strtotime($item['pubDate'])),
+        'link' => $item['link'],
+        'image' => $image
+    ];
+}
+
+$xhtml3 = '';
+$xhtml3 .= 'Vietnamnet ne';
+
+foreach ($result3 as $item ) {
+    $title = $item['title'];
+    // $image = $item['image'];
+    $date = $item['pubDate'];
+    $description = $item['description'];
+    $link = $item['link'];
+    $image = '';
+    $xhtml3 .= '
+    <div class="col-md-6 p-3">
+        <div class="entry mb-1 clearfix">
+            <div class="entry-image mb-3">
+                <a href="' . $image . '" data-lightbox="image" style="background: url(' . $image . ') no-repeat center center; background-size: cover; height: 278px;"></a>
+            </div>
+            <div class="entry-title">
+                <h3><a href="' . $link . '">' . $title . '</a></h3>
+            </div>
+            <div class="entry-content">
+                ' . $description . '
+            </div>
+            <div class="entry-meta no-separator nohover">
+                <ul class="justify-content-between mx-0">
+                    <li><i class="icon-calendar2"></i> ' . $date . '</li>
+                    <li>nld.com.vn</li>
+                </ul>
+            </div>
+            <div class="entry-meta no-separator hover">
+                <ul class="mx-0">
+                    <li><a href="' . $link . '">Xem &rarr;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    ';
+}
 
 
 ?>
@@ -173,6 +239,8 @@ foreach ($result2 as $item ) {
                 <?= $xhtml ?>
 
                 <?= $xhtml2 ?>
+
+                <?= $xhtml3 ?>
             </div>
 
             <!-- Infinity Scroll Loader
