@@ -15,66 +15,70 @@
 
 	<?php
 
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
+	// use PHPMailer\PHPMailer\PHPMailer;
+	// use PHPMailer\PHPMailer\Exception;
 
-	require './lib/PHPMailer/src/Exception.php';
-	require './lib/PHPMailer/src/PHPMailer.php';
-	require './lib/PHPMailer/src/SMTP.php';
+	// require './lib/PHPMailer/src/Exception.php';
+	// require './lib/PHPMailer/src/PHPMailer.php';
+	// require './lib/PHPMailer/src/SMTP.php';
 
-	$mail = new PHPMailer(true);
+	// $mail = new PHPMailer(true);
 
-	echo '<pre>';
-	print_r($mail);
-	echo '</pre>';
+	// echo '<pre>';
+	// print_r($mail);
+	// echo '</pre>';
 
-	$mail->isSMTP();
-	$mail->Host = 'SMTP.office365.com';
-	$mail->SMTPAuth = true;
-	$mail->Username = 'phongdht@mkaplus.com'; 
-	$mail->Password = '1091996@Micro1'; 
-	$mail->SMTPSecure = 'tls';
-	$mail->Port = 587;
+	// $mail->isSMTP();
+	// $mail->Host = 'SMTP.office365.com';
+	// $mail->SMTPAuth = true;
+	// $mail->Username = 'phongdht@mkaplus.com'; 
+	// $mail->Password = '1091996@Micro1'; 
+	// $mail->SMTPSecure = 'tls';
+	// $mail->Port = 587;
 	
 	
-	$mail->setFrom('phongdht@mkaplus.com', 'Mailtrap');
-	$mail->addReplyTo('phongcu1000@gmail.com', 'Mailtrap');
-	$mail->addAddress('nvlinh17041992@gmail.com', 'Tim'); 
-	$mail->Subject = 'phong gui mail';
-	$mail->isHTML(true);
-	$mailContent = "<h1>Send HTML Email using SMTP in PHP</h1>
-		<p>This is a test email I’m sending using SMTP mail server with PHPMailer.</p>";
-	$mail->Body = $mailContent;
+	// $mail->setFrom('phongdht@mkaplus.com', 'Mailtrap');
+	// $mail->addReplyTo('phongcu1000@gmail.com', 'Mailtrap');
+	// $mail->addAddress('nvlinh17041992@gmail.com', 'Tim'); 
+	// $mail->Subject = 'phong gui mail';
+	// $mail->isHTML(true);
+	// $mailContent = "<h1>Send HTML Email using SMTP in PHP</h1>
+	// 	<p>This is a test email I’m sending using SMTP mail server with PHPMailer.</p>";
+	// $mail->Body = $mailContent;
 	
-	if($mail->send()){
-		echo 'Message has been sent';
-	}else{
-		echo 'Message could not be sent.';
-		echo 'Mailer Error: ' . $mail->ErrorInfo;
-	}
+	// if($mail->send()){
+	// 	echo 'Message has been sent';
+	// }else{
+	// 	echo 'Message could not be sent.';
+	// 	echo 'Mailer Error: ' . $mail->ErrorInfo;
+	// }
 
 
-	$result = [];
-	$errors = '';
-	if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
-		$source = $_POST;
-		$validate = new Validate($source);
+	// $result = [];
+	// $errors = '';
+	// if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+	// 	$source = $_POST;
+	// 	$validate = new Validate($source);
 
-		// Rule
-		$validate->addRule('name', 'string', 5, 100)
-			// 				 ->addRule('age', 'int', 1, 90)
-			->addRule('email', 'email')
-			->addRule('message', 'string', 5, 100);
+	// 	// Rule
+	// 	$validate->addRule('name', 'string', 5, 100)
+	// 		// 				 ->addRule('age', 'int', 1, 90)
+	// 		->addRule('email', 'email')
+	// 		->addRule('message', 'string', 5, 100);
 
-		// Run
-		$validate->run();
-		$errors = $validate->showErrors();
-		$result = $validate->getResult();
-	}
+	// 	// Run
+	// 	$validate->run();
+	// 	$errors = $validate->showErrors();
+	// 	$result = $validate->getResult();
+	// }
 
+		// require_once('./data/function/sendMail.php');
 
-
-
+		//  $mail3 = new sendMail;
+		// $mail3->ghiDai();
+		 $a = 'asdfghjkl;';
+		var_dump($a);
+		die();
 
 
 

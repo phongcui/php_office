@@ -70,9 +70,9 @@ foreach ($result as $item) {
 $lines = file("./data/rss.txt");
 
          
-echo '<pre>';
-print_r($lines);
-echo '</pre>';
+// echo '<pre>';
+// print_r($lines);
+// echo '</pre>';
 
 $link2 = $lines[0];
 $link3 = $lines[1];
@@ -159,9 +159,9 @@ $xmlJson3    = json_encode($xml3);
 $xmlArr3     = json_decode($xmlJson3, 1);
 $list3       = $xmlArr3['channel']['item'];
 
-echo '<pre>';
-print_r($list3);
-echo '</pre>';
+// echo '<pre>';
+// print_r($list3);
+// echo '</pre>';
 
 foreach ($list3 as $item) {
     $tmp1 = [];

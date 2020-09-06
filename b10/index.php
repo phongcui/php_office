@@ -9,7 +9,7 @@
 
     <div id="wrapper" class="clearfix bg-light">
         <?php require_once 'html/header.php' ?>
-        
+
         <div class="container">
             <div class="row">
                 <!-- Content -->
@@ -20,9 +20,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
+                                <div id="box-gold">
+                                    <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e475cv4ivoeu9gj660os6xpwwy3s31s0phl7v0591l6&rid=giphy.gif" alt="">
+                                </div>
+                                <div id="box-coin">
+                                    <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e475cv4ivoeu9gj660os6xpwwy3s31s0phl7v0591l6&rid=giphy.gif" alt="">
+                                </div>
                                 <?php
-                                require_once 'box-gold.php';
-                                require_once 'box-coin.php';
+                                // require_once 'box-gold.php';
+                                // require_once 'box-coin.php';
                                 ?>
                             </div>
                         </div>
@@ -51,6 +57,19 @@
     <div id="gotoTop" class="icon-angle-up rounded-circle"></div>
 
     <?php require_once 'html/script.php' ?>
+
+    <script>
+        // $(document).ready(function() {
+        //     $('#box-gold').load('box-gold.php');
+        //     $('#box-coin').load('box-coin.php');
+        // });
+        $(window).on('load',function(){
+            $('#box-gold').load('box-gold.php');
+            $('#box-coin').load('box-coin.php');
+        })
+    </script>
+
+
 </body>
 
 </html>
