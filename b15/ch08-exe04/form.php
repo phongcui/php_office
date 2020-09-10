@@ -89,6 +89,29 @@
 			$success = '<div class="success">Success</div>'; 
 		}
 	}
+	$arrStatus 	= array(2=> 'Select status', 0 => 'Inactive', 1 => 'Active');
+	$status		= HTML::createSelectbox($arrStatus, 'status', $outValidate['status']);
+	$arrGroupDefault = [2=> 'Select group default', 0 => 'No', 1 => 'Yes'];
+	$groupDefault = HTML::createSelectbox($arrGroupDefault, 'group_default', $outValidate['group_default']);
+
+
+	$inputName = HTML::createInput('text','name','name',$outValidate['name']);
+	$inputPassword = HTML::createInput('text','password','password',$outValidate['password']);
+	$inputBirthday = HTML::createInput('number','birthday','birthday',$outValidate['birthday']);
+	$inputEmail = HTML::createInput('text','mail','mail',$outValidate['mail']);
+	$inputOrdering = HTML::createInput('number','ordering','ordering',$outValidate['ordering']);
+	$inputSave = HTML::createInput('submit','submit','save',$outValidate['save']);
+	$inputCancle = HTML::createInput('button','cancle','cancle',$outValidate['cancle']);
+	$inputToken = HTML::createInput('hidden','token','token',time());
+
+
+	$createRow = HTML::createFromRow('name',$inputName) ;
+	$createRowStatus = HTML::createFromRow('status',$status);
+	// $createRowDefault = HTML::createFromRow('Default',$arrGroupDefault);
+	$createRowOrdering = HTML::createFromRow('ordering',$inputOrdering);
+	$createRowMail = HTML::createFromRow('Mail',$inputEmail);
+	$createRowBirthday = HTML::createFromRow('Birthdat',$inputBirthday);
+	$createRowPassword = HTML::createFromRow('password',$inputPassword);
 	
 	// SELECT STATUS
 	$arrStatus 	= array(2=> 'Select status', 0 => 'Inactive', 1 => 'Active');
@@ -113,42 +136,33 @@
 	<div id="wrapper">
     	<div class="title"><?php echo $titlePage;?></div>
         <div id="form">   
-        	<?php echo $error . $success; ?>
+		<?php echo $error . $success; ?>
 			<form action="<?php echo $linkForm;?>" method="post" name="add-form">
 				<div class="row">
-					<p>Username</p>
-					<input type="text" name="username" value="<?php echo $outValidate['username'];?>">
+					<p>Name</p>
+					<?php echo $inputName ?>
 				</div>
+				<?php echo $createRowPassword ?>
+				<?php echo $createRowMail ?>
+				
+
+				<?php echo $createRowStatus ?>
+				<?php echo $createRowBirthday ?>
+
 				<div class="row">
-					<p>Email</p>
-					<input type="text" name="email" value="<?php echo $outValidate['email'];?>">
+					<p>Group default</p>
+					<?php echo $groupDefault;?>
 				</div>
-				<div class="row">
-					<p>Password</p>
-					<input type="password" name="password" value="">
-				</div>
-				<div class="row">
-					<p>Birthday</p>
-					<input type="text" id="birthday" name="birthday" value="<?php echo date("d-m-Y",strtotime($outValidate['birthday']));?>">
-				</div>
-				<div class="row">
-					<p>Group</p>
-					<?php echo $groupID;?>
-				</div>
-				<div class="row">
-					<p>Status</p>
-					<?php echo $status;?>
-				</div>
+				<?php /* echo $createRowDefault */ ?> 
+				
+
+				<?php echo $createRowOrdering?>
 				
 				<div class="row">
-					<p>Ordering</p>
-					<input type="text" name="ordering" value="<?php echo $outValidate['ordering'];?>">
-				</div>
-				
-				<div class="row">
-					<input type="submit" value="Save" name="submit">
+					<?php echo $inputSave . $inputCancle . $inputToken?>
+					<!-- <input type="submit" value="Save" name="submit">
 					<input type="button" value="Cancel" name="cancel" id="cancel-button">
-					<input type="hidden" value="<?php echo time();?>" name="token" />
+					<input type="hidden" value="<?php echo time();?>" name="token" /> -->
 				</div>
 												
 			</form>    

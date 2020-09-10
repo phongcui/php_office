@@ -1,6 +1,7 @@
 <?php
 	require_once 'connect.php';
 	require_once './class/Helper.class.php';
+	require_once './class/HTML.class.php';
 	session_start();
 	
 	// MULTY DELETE
@@ -58,6 +59,22 @@
 		$xhtml = '<div class="success">Dữ liệu đang cập nhật';
 	}
 	
+	$status		= HTML::createSelectbox($arrStatus, 'status', $outValidate['status']);
+	
+		// SELECT STATUS
+		$arrStatus 	= array(2=> 'Select status', 0 => 'Inactive', 1 => 'Active');
+		$status		= HTML::createSelectbox($arrStatus, 'status', $outValidate['status']);
+
+		
+		$arrGroupDefault = [2=> 'Select group default', 0 => 'No', 1 => 'Yes'];
+		$groupDefault = HTML::createSelectbox($arrGroupDefault, 'group_default', $outValidate['group_default']);
+		$query		= "SELECT `id`, `name` FROM `user`";
+		$groupID 	= $database->createSelectbox($query, 'group_id', 'default');
+
+		$slbGroup 		= $database->createSelectbox($query, 'group', 0);
+
+
+
 	
 
 ?>
@@ -72,7 +89,14 @@
 </head>
 <body>
 	<div id="wrapper">
-    	<div class="title">Manage User</div>
+		<div class="title">Manage User</div>
+		<form action="#" method="get">
+		<?php echo $status ?>
+		<?php echo $slbGroup ?>
+		
+
+
+		</form>
 		<form action="#" method="get">
 			<input name="search" value="<?php echo $valueInput ?>">
 			<button tyle="clear" id="clear">Clear</button>

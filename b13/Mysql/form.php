@@ -73,12 +73,13 @@
 
 
 	$inputName = HTML::createInput('text','name','name',$outValidate['name']);
-	$inputOrdering = HTML::createInput('text','ordering','ordering',$outValidate['ordering']);
+	$inputOrdering = HTML::createInput('number','ordering','ordering',$outValidate['ordering']);
 	$inputSave = HTML::createInput('button','save','save',$outValidate['save']);
 	$inputCancle = HTML::createInput('button','cancle','cancle',$outValidate['cancle']);
+	$inputToken = HTML::createInput('hidden','token','',time());
 
 
-	$createRow = HTML::createRow() 
+	// $createRow = HTML::createRow() ;
 
 
 ?>
@@ -118,9 +119,8 @@
 				</div>
 				
 				<div class="row">
-					<input type="submit" value="Save" name="submit">
-					<input type="button" value="Cancel" name="cancel" id="cancel-button">
-					<input type="hidden" value="<?php echo time();?>" name="token" />
+					<? echo $inputSave . $inputCancle . $inputToken ?>
+
 				</div>
 												
 			</form>    
