@@ -9,3 +9,16 @@ r7---sn-8pxuuxa-2m0z.googlevideo.com
 r9---sn-8pxuuxa-2m0z.googlevideo.com
 r10---sn-8pxuuxa-2m0z.googlevideo.com
 r11---sn-8pxuuxa-2m0z.googlevideo.com
+
+r1---sn-8pxuuxa-nbod.googlevideo.com
+r2---sn-8pxuuxa-nbod.googlevideo.com
+r3---sn-8pxuuxa-nbod.googlevideo.com
+r4---sn-8pxuuxa-nbod.googlevideo.com
+r5---sn-8pxuuxa-nbod.googlevideo.com
+r6---sn-8pxuuxa-nbod.googlevideo.com
+r7---sn-8pxuuxa-nbod.googlevideo.com
+r8---sn-8pxuuxa-nbod.googlevideo.com
+r9---sn-8pxuuxa-nbod.googlevideo.com
+r10---sn-8pxuuxa-nbod.googlevideo.com
+r11---sn-8pxuuxa-nbod.googlevideo.com
+
