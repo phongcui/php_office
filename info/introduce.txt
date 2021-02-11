@@ -64,17 +64,6 @@ r8---sn-8pxuuxa-nboee.googlevideo.com
 r9---sn-8pxuuxa-nboee.googlevideo.com
 r10---sn-8pxuuxa-nboee.googlevideo.com
 r11---sn-8pxuuxa-nboee.googlevideo.com
-r1---sn-8pxuuxa-nbol7.googlevideo.com
-r2---sn-8pxuuxa-nbol7.googlevideo.com
-r3---sn-8pxuuxa-nbol7.googlevideo.com
-r4---sn-8pxuuxa-nbol7.googlevideo.com
-r5---sn-8pxuuxa-nbol7.googlevideo.com
-r6---sn-8pxuuxa-nbol7.googlevideo.com
-r7---sn-8pxuuxa-nbol7.googlevideo.com
-r8---sn-8pxuuxa-nbol7.googlevideo.com
-r9---sn-8pxuuxa-nbol7.googlevideo.com
-r10---sn-8pxuuxa-nbol7.googlevideo.com
-r11---sn-8pxuuxa-nbol7.googlevideo.com
 r1---sn-npoeenll.googlevideo.com
 r2---sn-npoeenll.googlevideo.com
 r3---sn-npoeenll.googlevideo.com
