@@ -97,17 +97,6 @@ r8---sn-npoe7nez.googlevideo.com
 r9---sn-npoe7nez.googlevideo.com
 r10---sn-npoe7nez.googlevideo.com
 r11---sn-npoe7nez.googlevideo.com
-r1---sn-npoeened.googlevideo.com
-r2---sn-npoeened.googlevideo.com
-r3---sn-npoeened.googlevideo.com
-r4---sn-npoeened.googlevideo.com
-r5---sn-npoeened.googlevideo.com
-r6---sn-npoeened.googlevideo.com
-r7---sn-npoeened.googlevideo.com
-r8---sn-npoeened.googlevideo.com
-r9---sn-npoeened.googlevideo.com
-r10---sn-npoeened.googlevideo.com
-r11---sn-npoeened.googlevideo.com
 r1---sn-npoe7nes.googlevideo.com
 r2---sn-npoe7nes.googlevideo.com
 r3---sn-npoe7nes.googlevideo.com
