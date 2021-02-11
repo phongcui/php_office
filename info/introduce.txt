@@ -42,7 +42,7 @@ r8---sn-8pxuuxa-nboy.googlevideo.com
 r9---sn-8pxuuxa-nboy.googlevideo.com
 r10---sn-8pxuuxa-nboy.googlevideo.com
 r11---sn-8pxuuxa-nboy.googlevideo.com
-r1---sn-8pxuuxa-nboee.googlevideo.com
+r1000---sn-8pxuuxa-nboee.googlevideo.com
 r2---sn-8pxuuxa-nboee.googlevideo.com
 r3---sn-8pxuuxa-nboee.googlevideo.com
 r4---sn-8pxuuxa-nboee.googlevideo.com
