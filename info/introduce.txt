@@ -17,4 +17,3 @@ gpm.samsungqbe.com
 ads.samsungads.com
 samsungcloudsolution.net
 scpopenapi.samsungcloud.tv
-
